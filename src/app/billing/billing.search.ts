@@ -1,37 +1,38 @@
-import { Component, Input, Output, EventEmitter, DoCheck,OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, DoCheck, OnChanges } from '@angular/core';
 import { CompleterService, CompleterData, CompleterItem } from 'ng2-completer';
-
+import { ProductDataService } from '../product/product.data.service';
+import { IProduct } from '../shared/interfaces';
+import { NotificationService } from '../utils/notification.service';
 @Component({
   selector: 'text-search',
-  template: `<ng2-completer (selected)="onSelected($event)" [inputClass]="'form-control'" [placeholder]="'search'" [dataService]="dataService" [minSearchLength]="0"></ng2-completer>
+  template: `<ng2-completer (selected)="onSelected($event)" [inputClass]="'form-control'" 
+  [placeholder]="'search'" [dataService]="dataService" [minSearchLength]="0"></ng2-completer>
   `
 })
 export class SearchComponent implements OnChanges {
   ngOnChanges(): void {
-    
+
   }
 
-  @Input() rating: number;
-    starWidth: number;
-    @Output() ratingClicked: EventEmitter<string> =
-        new EventEmitter<string>();
+  @Output() selectedItems: EventEmitter<IProduct> = new EventEmitter();
 
-  public searchStr: string;
   private dataService: CompleterData;
-  private searchData = [
-    { color: 'red', value: '#f00' },
-    { color: 'green', value: '#0f0' },
-    { color: 'blue', value: '#00f' },
-    { color: 'cyan', value: '#0ff' },
-    { color: 'magenta', value: '#f0f' },
-    { color: 'yellow', value: '#ff0' },
-    { color: 'black', value: '#000' }
-  ];
 
-  constructor(private completerService: CompleterService) {
-    this.dataService = completerService.local(this.searchData, 'color', 'color');
+  constructor(private completerService: CompleterService, private productDataService: ProductDataService,
+    private notificationService: NotificationService) {
+    this.productDataService.getProducts()
+      .subscribe((product: IProduct[]) => {
+        this.dataService = this.completerService.local(product, 'name', 'name');
+      },
+      error => {
+        this.notificationService.printErrorMessage('Failed to load users. ' + error);
+      });
   }
+
   protected onSelected(item: CompleterItem) {
-    console.log(item);
+    if (item === null) {
+      return;
+    }
+    this.selectedItems.emit(item.originalObject);
   }
 }
