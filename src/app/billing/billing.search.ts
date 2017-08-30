@@ -22,7 +22,7 @@ export class SearchComponent implements OnChanges {
     private notificationService: NotificationService) {
     this.productDataService.getProducts()
       .subscribe((product: IProduct[]) => {
-        this.dataService = this.completerService.local(product, 'name', 'name');
+        this.dataService = this.completerService.local(product, 'Name', 'Name');
       },
       error => {
         this.notificationService.printErrorMessage('Failed to load users. ' + error);

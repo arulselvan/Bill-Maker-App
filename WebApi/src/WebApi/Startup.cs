@@ -15,6 +15,7 @@
     using System.Linq;
     using Microsoft.Extensions.DependencyModel;
     using AutoMapper;
+    using MongoSample.Repository;
 
     public class Startup
     {
@@ -48,6 +49,7 @@
             services.AddTransient<UnitSeed>();
             services.AddTransient(typeof(GenericRepository<,>), typeof(GenericRepository<,>));
             services.AddTransient<ProductRepository>();
+            services.AddTransient<DataAccess>();
 
             AddAutoMapper(services, DependencyContext.Default);
 

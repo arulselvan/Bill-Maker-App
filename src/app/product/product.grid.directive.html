@@ -1,0 +1,31 @@
+<div class="container col-md-12">
+    <div class="row">
+        <data-table id="persons-grid" headerTitle="Products" [items]="items" [itemCount]="itemCount" (reload)="reloadItems($event)"
+            (rowClick)="rowClick($event)" (rowDoubleClick)="rowDoubleClick($event)" [rowTooltip]="rowTooltip">
+            <data-table-column [property]="'Name'" [header]="'Product'" [sortable]="true" [resizable]="true">
+            </data-table-column>
+            <data-table-column property="Code" header="Code" width="150px">
+                </data-table-column>
+             <!-- <data-table-column [property]="Code" [header]="'Code'" [sortable]="true">
+               <template #dataTableCell let-item="item">
+                    <span>{{item.date | date:'yyyy-MM-dd'}}</span>
+                </template> 
+            </data-table-column>-->
+            <data-table-column property="Mrp" header="Mrp" width="150px">
+            </data-table-column>
+            <data-table-column [property]="'Price'" [header]="'Price'" [visible]="false">
+            </data-table-column>
+            <data-table-column [property]="'RetailerPrice'" [header]="'RetailerPrice'" [width]="100" [resizable]="true">
+                <!-- <template #dataTableHeader let-item="item">
+                    <span style="color: rgb(232, 0, 0)">Active</span>
+                </template>
+                <template #dataTableCell let-item="item">
+                    <span style="color: grey">
+                            <span class="glyphicon glyphicon-ok" *ngIf="item.active"></span>
+                    <span class="glyphicon glyphicon-remove" *ngIf="!item.active"></span>
+                    </span>
+                </template> -->
+            </data-table-column>
+        </data-table>
+    </div>
+</div>

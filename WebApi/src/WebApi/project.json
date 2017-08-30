@@ -23,7 +23,8 @@
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "AutoMapper": "6.1.1",
     "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.1",
-    "NETStandard.Library": "2.0.0"
+    "NETStandard.Library": "2.0.0",
+    "mongocsharpdriver": "2.3.0"
   },
 
   "tools": {

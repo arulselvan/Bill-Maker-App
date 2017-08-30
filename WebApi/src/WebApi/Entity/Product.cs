@@ -13,9 +13,9 @@
         public decimal RetailerPrice { get; set; }
         public decimal Quantity { get; set; }
         public decimal Stock { get; set; }
-        public int Cgst { get; set; }
-        public int Sgst { get; set; }
-        public int Vat { get; set; }
+        public decimal Cgst { get; set; }
+        public decimal Sgst { get; set; }
+        public decimal Vat { get; set; }
         public DateTime ManufacturedDate { get; set; }
         public DateTime ExpiredDate { get; set; }
         public short Status { get; set; }

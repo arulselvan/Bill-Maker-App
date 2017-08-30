@@ -1,9 +1,9 @@
 export interface IProduct {
-    id: string;
-    unitId: string;
-    companyId: string;
-    came: string;
-    code: string;
+    _id: number;
+    UnitId: number;
+    CompanyId: number;
+    Name: string;
+    Code: string;
     Mrp: number;
     Price: number;
     RetailerPrice: number;
@@ -14,22 +14,22 @@ export interface IProduct {
     Vat: number;
     ManufacturedDate: Date;
     ExpiredDate: Date;
-    status: number;
-    unit: IUnit;
-    company: ICompany;
+    Status: number;
+    Unit: IUnit;
+    Company: ICompany;
 }
 
 export interface IUnit {
-    code: string;
-    description: string;
+    Code: string;
+    Description: string;
 }
 
 export interface ICompany {
-    name: string;
-    phone: string;
-    aadharNumber: number;
-    tinNumber: string;
-    gstNumber: string;
+    Name: string;
+    Phone: string;
+    AadharNumber: number;
+    TinNumber: string;
+    GstNumber: string;
 }
 
 export interface Predicate<T> {

@@ -4,23 +4,41 @@ import { Ng2CompleterModule } from 'ng2-completer';
 import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { BillingComponent } from './billing/billing.component';
+import { ProductComponent } from './product/product.component';
 import { SearchComponent } from './billing/billing.search';
 import { ProductDataService } from './product/product.data.service';
 import { ConfigService } from './utils/config.service';
 import { NotificationService } from './utils/notification.service';
+import { FocusDirective } from './utils/focus.directive';
+import { ExportDirective } from './utils/export.directive';
+import { CalculatorService } from './billing/calculator.service';
+import { RouterModule, Routes } from '@angular/router';
+import { DataTableModule } from 'angular-2-data-table';
+
+
+const appRoutes: Routes = [
+  { path: '', component: BillingComponent },
+  { path: 'Billing', component: BillingComponent },
+  { path: 'Product', component: ProductComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     BillingComponent,
-    SearchComponent
+    ProductComponent,
+    SearchComponent,
+    FocusDirective,
+    ExportDirective 
   ],
-  imports: [
+  imports: [    
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     Ng2CompleterModule,
-    FormsModule
+    FormsModule,
+    DataTableModule
   ],
-  providers: [ProductDataService, ConfigService, NotificationService],
+  providers: [ProductDataService, ConfigService, NotificationService, CalculatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,7 +24,6 @@ export class NotificationService {
     Prints a success message using the alertify.js lib
     */
     printSuccessMessage(message: string) {
-
         this._notifier.success(message);
     }
 
