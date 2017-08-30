@@ -1,8 +1,0 @@
-C:\sudhakar\references\Bill-Maker-App\WebApi\ConsoleApplication\bin\Release\ConsoleApplication.exe.config
-C:\sudhakar\references\Bill-Maker-App\WebApi\ConsoleApplication\bin\Release\ConsoleApplication.exe
-C:\sudhakar\references\Bill-Maker-App\WebApi\ConsoleApplication\bin\Release\ConsoleApplication.pdb
-C:\sudhakar\references\Bill-Maker-App\WebApi\ConsoleApplication\bin\Release\PrinterService.dll
-C:\sudhakar\references\Bill-Maker-App\WebApi\ConsoleApplication\bin\Release\PrinterService.pdb
-C:\sudhakar\references\Bill-Maker-App\WebApi\ConsoleApplication\obj\Release\ConsoleApplication.csprojResolveAssemblyReference.cache
-C:\sudhakar\references\Bill-Maker-App\WebApi\ConsoleApplication\obj\Release\ConsoleApplication.exe
-C:\sudhakar\references\Bill-Maker-App\WebApi\ConsoleApplication\obj\Release\ConsoleApplication.pdb
